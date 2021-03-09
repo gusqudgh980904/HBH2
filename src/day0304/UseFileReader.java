@@ -1,5 +1,5 @@
-package day0304;
 
+package day0304;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
