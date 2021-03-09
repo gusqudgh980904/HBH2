@@ -121,7 +121,14 @@ public class MemoFontEvt extends WindowAdapter
 
 	@Override
 	public void actionPerformed(ActionEvent ae) {
-	
+		if(ae.getSource()==mf.getJbtnConfirm()) {//적용버튼
+			//미리보기라벨에 설정된 Font정보를 가져와서
+			Font font=mf.getJlbPreview().getFont();
+			//JavaMemo(부모창)의 JTextArea에 설정
+			mf.getJm().getJtaNote().setFont(font);
+		}//if
+		
+		mf.dispose();
 	}//actionPerformed
 	
 }//class
