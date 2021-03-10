@@ -1,5 +1,7 @@
 package kr.co.sist.javamemo;
 
+import java.awt.Font;
+
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -16,7 +18,7 @@ public class JavaMemo extends JFrame {
 	//새글, 열기,저장, 새이름으로, 종료, 글꼴, 도움말
 	private JTextArea jtaNote;
 	
-	public JavaMemo() {
+	public JavaMemo(Font initFont) {
 		super("메모장");
 		
 		//컴포넌트 생성.
@@ -35,6 +37,11 @@ public class JavaMemo extends JFrame {
 		jmiHelp=new JMenuItem("메모장정보");
 		
 		jtaNote=new JTextArea();
+		//읽어들인 폰트를 설정한다
+		if(initFont!=null) {//읽어들인 Font가 존재한다면 JTextArea에 Font를 설정한다
+			jtaNote.setFont(initFont);
+		}//if
+		
 		JScrollPane jspNote=new JScrollPane( jtaNote );//스크롤바가 없는 객체에 스크롤바를 붙인다.  
 				
 		//배치.
@@ -84,6 +91,7 @@ public class JavaMemo extends JFrame {
 		setVisible(true);
 		
 	}//JavaMemo
+
 
 	public JMenuItem getJmiNew() {
 		return jmiNew;

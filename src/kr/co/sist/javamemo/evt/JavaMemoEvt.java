@@ -1,15 +1,19 @@
 package kr.co.sist.javamemo.evt;
 
 import java.awt.FileDialog;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
@@ -39,7 +43,46 @@ public class JavaMemoEvt extends WindowAdapter implements ActionListener {
 	public void windowClosing(WindowEvent we) {
 		jm.dispose();
 	}//windowClosing
+	
 
+	@Override
+	public void windowClosed(WindowEvent e) {
+		try {
+			saveFontInfo();
+		}catch(IOException e1) {
+			e1.printStackTrace();
+		}//catch
+	}//windowClosed
+
+	
+	/**
+	 * 프로그램이 종료되면 JTextArea의 Font정보를 다음번에도 사용하기 위해 파일에 저장
+	 * @throws IOException
+	 */
+	private void saveFontInfo()throws IOException{
+		//정보파일을 저장할 폴더가 존재하지 않을 수 있다.
+		File dir=new File("c:/dev/memo");
+		
+		if(!dir.exists()) {//저장할 폴더가 존재하지 않으면
+			dir.mkdirs();//폴더를 생성
+		}//if
+		
+		ObjectOutputStream oos=null;
+		try {
+			//지정된 경로에 파일스트림을 연결
+			oos=new ObjectOutputStream(new FileOutputStream(dir.getAbsolutePath()+"/memo.dat"));
+			Font font=jm.getJtaNote().getFont();//JTextArea의 Font정보를 얻는다
+			//Font객체를 스트림에 기록
+			oos.writeObject(font);
+			//스트림에 기록된 내용을 목적지로 분출
+			oos.flush();
+		}finally {
+			if(oos!=null) {oos.close();}
+		}//finally
+		
+	}//saveFontInfo
+	
+	
 	@Override
 	public void actionPerformed(ActionEvent ae) {
 		if(ae.getSource() == jm.getJmiFont()) {//글꼴에서 이벤트를 발생.
@@ -229,10 +272,14 @@ public class JavaMemoEvt extends WindowAdapter implements ActionListener {
 	 
 	
 	/**
-	 * 종료
+	 * 메뉴에서 닫기를 눌렀을 때
 	 */
 	public void end() {
-		
+		try {
+			saveFontInfo();
+		}catch(IOException e1) {
+			e1.printStackTrace();
+		}//catch
 	}//end
 	
 }//class

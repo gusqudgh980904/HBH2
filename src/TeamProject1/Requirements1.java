@@ -15,19 +15,19 @@ import java.util.Vector;
 public class Requirements1 {
 	
 	private File log1;
-	private List<Integer> list1=new Vector<Integer>();
-	private int java=0;
-	private int javascript=0;
-	private int d8=0;
-	private int jg9k=0;
-	private int front=0;
-	private int jsp=0;
-	private int hadoop=0;
-	private int res=0;
-	private int ora=0;
-	private int mongodb=0;
+	private List<Integer> list=new Vector<Integer>();
+	private int java;
+	private int javascript;
+	private int d8;
+	private int jg9k;
+	private int front;
+	private int jsp;
+	private int hadoop;
+	private int res;
+	private int ora;
+	private int mongodb;
 	
-	public String Requirements1_1() throws IOException {//1번 로그
+	public String Requirements() throws IOException {//1번 로그
 		log1= new File("c:/dev/group_prj1/sist_input_1.log");
 		String log="";
 		BufferedReader br=null;
@@ -65,16 +65,17 @@ public class Requirements1 {
 					mongodb++;
 				}//if
 			}//while
-			list1.add(java);
-			list1.add(javascript);
-			list1.add(d8);
-			list1.add(jg9k);
-			list1.add(front);
-			list1.add(jsp);
-			list1.add(hadoop);
-			list1.add(res);
-			list1.add(ora);
-			list1.add(mongodb);
+			
+			list.add(java);
+			list.add(javascript);
+			list.add(d8);
+			list.add(jg9k);
+			list.add(front);
+			list.add(jsp);
+			list.add(hadoop);
+			list.add(res);
+			list.add(ora);
+			list.add(mongodb);
 			
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -82,8 +83,8 @@ public class Requirements1 {
 			if(br!=null) {br.close();}//if
 		}//finally
 		
-		Integer[] arr=new Integer[list1.size()];
-		list1.toArray(arr);
+		Integer[] arr=new Integer[list.size()];
+		list.toArray(arr);
 		int max=arr[0];
 		for(int i=1;i<arr.length;i++) {//최대값구하는식
 			if(arr[i]>max) {
@@ -94,13 +95,11 @@ public class Requirements1 {
 		return "요청횟수가 가장 많은 키는 "+max+"회";	
 	}//Requirements1_1
 	
-
-	
 	
 	public static void main(String[] args) {
 		Requirements1 r1=new Requirements1();
 			try {
-				System.out.println(r1.Requirements1_1());
+				System.out.println(r1.Requirements());
 			} catch (IOException e) {
 				e.printStackTrace();
 			}//catch

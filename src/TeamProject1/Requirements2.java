@@ -27,7 +27,7 @@ public class Requirements2 {
 	private int ora;
 	private int mongodb;
 	
-	public String Requirements2() throws IOException {
+	public String Requirements() throws IOException {
 		log2= new File("c:/dev/group_prj1/sist_input_2.log");
 		String log="";
 		BufferedReader br=null;
@@ -98,7 +98,7 @@ public class Requirements2 {
 	public static void main(String[] args) {
 		Requirements2 r2=new Requirements2();
 			try {
-				System.out.println(r2.Requirements2());
+				System.out.println(r2.Requirements());
 			} catch (IOException e) {
 				e.printStackTrace();
 			}//catch
