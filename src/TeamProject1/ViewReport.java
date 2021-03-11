@@ -1,4 +1,4 @@
-package project;
+package TeamProject1;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -38,8 +38,11 @@ public class ViewReport extends JDialog{
 		return jtalog;
 	}
 
-	public static void main(String[] args) {
 		
-	}
+
+
+
+
+		
 
 }

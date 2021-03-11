@@ -1,4 +1,4 @@
-package project;
+package TeamProject1;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -17,8 +17,6 @@ import javax.swing.JTextField;
 @SuppressWarnings("serial")
 public class Login extends JFrame{
 	
-	
-	
 	private JButton jbtnLogin;
 	private JTextField jtfId;
 	private JPasswordField jpfPw;
@@ -27,7 +25,7 @@ public class Login extends JFrame{
 		super("Login");
 		
 		jbtnLogin = new JButton("Login");
-		jtfId = new JTextField(" ID");
+		jtfId = new JTextField("ID");
 		jpfPw = new JPasswordField("Pass",4);
 		JLabel jlIfm = new JLabel("Ver1.0 Log Information system");
 		
@@ -36,8 +34,8 @@ public class Login extends JFrame{
 		JLabel jlImg = new JLabel(iiImg);
 		jlImg.setIcon(iiImg);
 		
-		Font jbtnfont = new Font("±¼¸²",Font.BOLD, 30);
-		Font loginfont = new Font("±¼¸²",Font.PLAIN, 20);
+		Font jbtnfont = new Font("¸¼Àº°íµñ",Font.BOLD, 30);
+		Font loginfont = new Font("¸¼Àº°íµñ",Font.PLAIN, 20);
 		jbtnLogin.setFont(jbtnfont);
 		jtfId.setFont(loginfont);
 		jpfPw.setFont(loginfont);

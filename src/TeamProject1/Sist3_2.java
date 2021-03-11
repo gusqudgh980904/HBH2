@@ -1,4 +1,4 @@
-package project;
+package TeamProject1;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -6,18 +6,18 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- *  프로젝트 문제 4-1번
+ *  프로젝트 문제 4-2번
  * @author user
  */
-public class Sist3_1 {
+public class Sist3_2 {
 	
-	//4-1번
+	//4-2번
 	public String Sist4() throws IOException{
 		int success = 0;
 		int fail = 0;
 		String temp;
 		
-		File file = new File("C:\\dev\\projecet\\sist_input_1.log");
+		File file = new File("C:\\dev\\projecet\\sist_input_2.log");
 		BufferedReader br = null; 
 		br = new BufferedReader(new FileReader(file));
 		
@@ -35,7 +35,7 @@ public class Sist3_1 {
 	
 	public static void main(String[] args) {
 		try {
-			Sist3_1 st = new Sist3_1();
+			Sist3_2 st = new Sist3_2();
 			System.out.println(st.Sist4());
 		} catch (IOException e) {
 			e.printStackTrace();
