@@ -20,7 +20,7 @@ import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 
 /**
- * 일 대 일 채팅서버
+ * 일 대 일 채팅서버:Thread 도입전-메세지를 무한 루프로 읽어들이는 코드문제로 동작하지 않는다.
  * @author user
  */
 @SuppressWarnings("serial")
@@ -73,8 +73,8 @@ public class SimpleChatServer extends JFrame implements ActionListener {
 			}//windowClosing
 			
 		});
-		jtfTalk.requestFocus();
 		
+		jtfTalk.requestFocus();
 	}//SimpleChatServer
 	
 	
@@ -124,7 +124,6 @@ public class SimpleChatServer extends JFrame implements ActionListener {
 		if(writeStream!=null) {writeStream.close();}//if
 		if(client!=null) {client.close();}//if
 		if(server!=null) {server.close();}//if
-			
 		
 	}//closeServer
 	
