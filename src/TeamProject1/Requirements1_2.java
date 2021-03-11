@@ -40,34 +40,34 @@ public class Requirements1_2 {
 			br=new BufferedReader(new FileReader(log2));
 			while((log=br.readLine())!=null) {//각 키가 얼마나 들어있는지
 				
-				if(log.contains("java")) {
+				if(log.contains("key=java")&&!log.contains("script")) {
 					java++;
 				}//if
-				if(log.contains("javascript")) {
+				if(log.contains("key=javascript")) {
 					javascript++;
 				}//if
-				if(log.contains("d8")) {
+				if(log.contains("key=d8")) {
 					d8++;
 				}//if
-				if(log.contains("jg9k")) {
+				if(log.contains("key=jg9k")) {
 					jg9k++;
 				}//if
-				if(log.contains("front")) {
+				if(log.contains("key=front")) {
 					front++;
 				}//if
-				if(log.contains("jsp")) {
+				if(log.contains("key=jsp")) {
 					jsp++;
 				}//if
-				if(log.contains("hadoop")) {
+				if(log.contains("key=hadoop")) {
 					hadoop++;
 				}//if
-				if(log.contains("res")) {
+				if(log.contains("key=res")) {
 					res++;
 				}//if
-				if(log.contains("ora")) {
+				if(log.contains("key=ora")) {
 					ora++;
 				}//if
-				if(log.contains("mongodb")) {
+				if(log.contains("key=mongodb")) {
 					mongodb++;
 				}//if
 			}//while

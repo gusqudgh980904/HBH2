@@ -28,7 +28,7 @@ public class UseLogInputStream2 {
 		listLog2 = new ArrayList<String>();
 		Map<String, Integer> keyMap = new HashMap<String, Integer>();
 		
-		File file2 = new File("c:/dev/log/sist_input_2.log");
+		File file2 = new File("c:/dev/group_prj1/sist_input_2.log");
 		
 		BufferedReader brLog2 = new BufferedReader(new FileReader(file2));
 		
@@ -156,7 +156,7 @@ public class UseLogInputStream2 {
 		
 		String maxName_count;
 		try {
-			maxName_count = ulis2.getLog2(1000, 1500);
+			maxName_count = ulis2.getLog2(1,2854);
 			System.out.println(maxName_count);
 		} catch (IOException e) {
 			e.printStackTrace();
