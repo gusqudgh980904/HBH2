@@ -1,4 +1,4 @@
-package TeamProject1;
+package project1;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -30,10 +30,10 @@ public class UseLogInputStream1 {
 
 	public String getLog1(int startLine, int endLine) throws IOException, FileNotFoundException {
 
-		listLog1 = new ArrayList<String>();
+		listLog1 = new ArrayList<String>();  
 		Map<String, Integer> keyMap = new HashMap<String, Integer>();
 		
-		File file1 = new File("c:/dev/group_prj1/sist_input_1.log");
+		File file1 = new File("c:/dev/log/sist_input_1.log");
 		
 		BufferedReader brLog1 = new BufferedReader(new FileReader(file1));
 			
@@ -49,43 +49,43 @@ public class UseLogInputStream1 {
 				}//end while
 				
 				for(int i = startLine - 1; i < endLine; i++) {
-					if(listLog1.get(i).contains("java")) {
+					if((listLog1.get(i).contains("key=java")) && (!listLog1.get(i).contains("script"))) {
 						java++;
 					}//end if
 					
-					if(listLog1.get(i).contains("javascript")) {
+					if(listLog1.get(i).contains("key=javascript")) {
 						javascript++;
 					}//end if
 
-					if(listLog1.get(i).contains("d8")) {
+					if(listLog1.get(i).contains("key=d8")) {
 						d8++;
 					}//end if
 					
-					if(listLog1.get(i).contains("jg9k")) {
+					if(listLog1.get(i).contains("key=jg9k")) {
 						jg9k++;
 					}//end if
 
-					if(listLog1.get(i).contains("front")) {
+					if(listLog1.get(i).contains("key=front")) {
 						front++;
 					}//end if
 					
-					if(listLog1.get(i).contains("jsp")) {
+					if(listLog1.get(i).contains("key=jsp")) {
 						jsp++;
 					}//end if
 					
-					if(listLog1.get(i).contains("hadoop")) {
+					if(listLog1.get(i).contains("key=hadoop")) {
 						hadoop++;
 					}//end if
 					
-					if(listLog1.get(i).contains("res")) {
+					if(listLog1.get(i).contains("key=res")) {
 						res++;
 					}//end if
 					
-					if(listLog1.get(i).contains("ora")) {
+					if(listLog1.get(i).contains("key=ora")) {
 						ora++;
 					}//end if
 
-					if(listLog1.get(i).contains("mongodb")) {
+					if(listLog1.get(i).contains("key=mongodb")) {
 						mongodb++;
 					}//end if
 					
@@ -164,7 +164,7 @@ public class UseLogInputStream1 {
 		UseLogInputStream1 ulis1 =  new UseLogInputStream1();
 		
 		try {
-			String maxName_Count = ulis1.getLog1(800, 1500);
+			String maxName_Count = ulis1.getLog1(1, 100);
 			System.out.println(maxName_Count);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

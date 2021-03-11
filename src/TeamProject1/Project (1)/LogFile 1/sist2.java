@@ -1,4 +1,4 @@
-package TeamProject1;
+package project;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -19,7 +19,7 @@ public class sist2 {
 		
 		String temp;
 		String temp2;
-		File file = new File("c:/dev/group_prj1/sist_input_1.log");
+		File file = new File("C:\\dev\\project\\sist_input_1.log");
 		BufferedReader br = null; 
 		br = new BufferedReader(new FileReader(file));
 		int Total=0;
