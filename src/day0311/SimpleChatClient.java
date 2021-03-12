@@ -90,7 +90,8 @@ public class SimpleChatClient extends JFrame implements ActionListener,Runnable 
 			
 		String ipAddr=JOptionPane.showInputDialog("접속서버의 주소를 입력해주세요.","211.63.89");
 		
-		client=new Socket(ipAddr,10000);//서버로 연결시도
+//		client=new Socket(ipAddr,10000);//서버로 연결시도
+		client=new Socket(ipAddr,2021);//서버로 연결시도
 		//데이터를 주고 받기 위해 스트림을 연결
 		readStream=new DataInputStream(client.getInputStream());//데이터를 읽을 준비가 된 상태
 		writeStream=new DataOutputStream(client.getOutputStream());//데이터를 쓸 준비가 된 상태
@@ -135,7 +136,6 @@ public class SimpleChatClient extends JFrame implements ActionListener,Runnable 
 		writeStream.writeUTF(sendMsg);
 		//스트림에 내용을 목적지로 분출
 		writeStream.flush();
-		
 	}//sendMsg
 	
 	

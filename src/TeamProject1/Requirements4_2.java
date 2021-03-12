@@ -33,18 +33,18 @@ public class Requirements4_2 {
 		try {
 			br=new BufferedReader(new FileReader(log2));
 			while((log=br.readLine())!=null) {
-//				if(log.substring(log.indexOf("6")+1).contains(" 09")) {
-//					nineHours++;
-//				}//if
-//				if(log.substring(log.indexOf("6")+1).contains(" 10")) {
-//					tenHours++;
-//				}//if
+				if(log.substring(log.indexOf("6")+1).contains(" 09")) {
+					nineHours++;
+				}//if
+				if(log.substring(log.indexOf("6")+1).contains(" 10")) {
+					tenHours++;
+				}//if
 				if(log.substring(log.indexOf("6")+1).contains(" 11")) {
 					elevenHours++;
 				}//if
-//				if(log.substring(log.indexOf("6")+1).contains(" 12")) {
-//					twelveHours++;
-//				}//if
+				if(log.substring(log.indexOf("6")+1).contains(" 12")) {
+					twelveHours++;
+				}//if
 			}//while
 			
 			keyMap.put("9½Ã", nineHours);
