@@ -108,7 +108,8 @@ public class ChatServerHelper extends Thread {
 	 * @param msg
 	 * @throws IOException 
 	 */
-	public void broadcast(String msg) throws IOException {
+	public synchronized void broadcast(String msg) throws IOException {
+		//static 리스트 (ArrayList=>Handler)를 받아왔다.
 		List<ChatServerHelper> connList=ChatServerView.connList;
 		
 //		ChatServerHelper csh=null;

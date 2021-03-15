@@ -33,7 +33,8 @@ public class ChatServerView extends JFrame implements ActionListener, Runnable {
 		super(":::::::::::::채팅 관리자:::::::::::::::::");
 		
 		//접속자를 관리할 List를 생성한다.
-		connList=new ArrayList<ChatServerHelper>();
+//		connList=new ArrayList<ChatServerHelper>();
+		connList=new Vector<ChatServerHelper>();
 		
 		dlmClientStatus=new DefaultListModel<String>();
 		dlmClientStatus.addElement("채팅 관리자");
